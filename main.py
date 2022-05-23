@@ -37,9 +37,9 @@ async def get_questions(test_id : int):
     keys = ['question_id', 'test_id', 'question_text', 'answer_one', 'answer_two','answer_three','answer_four','correct_answer']
     questions = database.get_questions(test_id)
     if questions:
-        return [{k:i for k,i in zip(keys,questions[i])} for i in range(len(questions))]
+        return {i:{k:i for k,i in zip(keys,questions[i])} for i in range(len(questions))}
     else: 
-        return []
+        return {}
 
 @app.get("/add_user_result")
 async def add_user_result(user_name : str, test_id : int, result : float):
@@ -47,4 +47,4 @@ async def add_user_result(user_name : str, test_id : int, result : float):
 
 
 if __name__ == '__main__':
-    uvicorn.run(app, host='127.0.0.1', port=3001)   
+    uvicorn.run(app, host='0.0.0.0', port=3001)   

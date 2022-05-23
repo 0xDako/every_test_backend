@@ -47,7 +47,7 @@ class DBManager():
     
     def get_questions(self, test_id : int):
         sql_request =   '''
-                        SELECT * FROM questions WHERE test_id = %s
+                        SELECT * FROM questions WHERE test_id = %s ORDER BY question_id
                         '''
         parameters = (test_id,)
 
