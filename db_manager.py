@@ -60,7 +60,7 @@ class DBManager():
     
     def add_user_result(self, user_name, test_id, result):
         sql_request =   '''
-                        INSERT INTO users (name, test_id, result) VALUES (%s, %s, %s)
+                        INSERT INTO test_results (name, test_id, result) VALUES (%s, %s, %s)
                         '''
         parameters = (user_name, test_id, result)
         self.__handle_injection(sql_request, parameters)

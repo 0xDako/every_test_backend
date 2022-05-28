@@ -20,9 +20,9 @@ CREATE TABLE questions(
     correct_answer INT
 );
 
-CREATE TABLE users(
+CREATE TABLE test_results(
     user_id SERIAL PRIMARY KEY,
     name VARCHAR(200),
     test_id INT,
-    result FLOAT
+    result INT
 );
