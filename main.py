@@ -41,7 +41,7 @@ async def get_questions(test_id : int):
     else: 
         return {}
 
-@app.get("/add_user_result")
+@app.post("/add_user_result")
 async def add_user_result(user_name : str, test_id : int, result : float):
     database.add_user_result(user_name, test_id, result)
 
